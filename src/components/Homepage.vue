@@ -1,46 +1,50 @@
 <script setup>
 </script>
-<script>
-  export default {
-    name: "Homepage",
-    data: () => ({
-      location_filter: ["one", "two", "three", "Manila"],
-      location_filter_default: ["Manila"],
-      region_filter: ["one", "two", "three", "Manila"],
-      region_filter_default: ["APAC"],
-      answertype_filter_default: ["Text"],
-      answertype_filter: ["Rating", "Text"],
-      event: [],
-      questions: [],
-      sample: null,
-      dialog: false,
-      removeDialog: false,
-      editDialog: false,
-      eventId: null,
-      questionToDelete: null,
-
-      // event questions
-      EventQuestion:{
-        eventId: null,
-        eventQuestion: '',
-      },
-    }),
-  };
-</script>
 
 <template>
   <div style="z-index:2;" class="main-content">
-    <v-sheet class="d-flex flex-wrap">
+    <v-sheet class="d-flex">
+      <!-- Left -->
       <v-sheet class="flex-1-0 ma-2 pa-2">
         <v-sheet class="flex-1-0 ma-2 pa-2">
           Date and Time Stamp
         </v-sheet>
-        <v-sheet class="camera-frame flex-1-0 pa-2 bg-surface-variant">
+        <v-sheet style="background-color: aquamarine;" class="camera-frame flex-1-0 pa-2">
           This is a box
         </v-sheet>
       </v-sheet>
+      <!-- Right -->
       <v-sheet class="ma-2 pa-2">
-        I'm a single element in an inline flexbox container!
+        <v-sheet class="mx-auto" width="300">
+          <h1 align="center" class="mb-5">Time TRAQ</h1>
+        </v-sheet>
+        <v-sheet class="mx-auto" width="300">
+          <v-form fast-fail @submit.prevent>
+            <v-text-field density="compact"
+              v-model="employee_id"
+              :rules="employee_id"
+              label="Employee ID"
+            ></v-text-field>
+
+            <v-text-field density="compact"
+              v-model="employee_name"
+              :rules="employee_name"
+              label="Employee Name"
+            ></v-text-field>
+
+            <v-text-field density="compact"
+              v-model="email"
+              :rules="email"
+              label="Email"
+            ></v-text-field>
+
+            <v-btn class="mt-2" color="grey-darken-4"
+              type="submit" density="comfortable" block
+            >
+              Submit
+            </v-btn>
+          </v-form>
+        </v-sheet>
       </v-sheet>
     </v-sheet>
   </div>
@@ -59,12 +63,12 @@
 
 <style>
   body {
-  background-color:rgb(100, 14, 14);
+  background-color:rgb(241, 203, 203);
   }
   #container {
     width:100%;
     height:100%;
-    background-color:#FFFFFF;
+    /* background-color:#9d95b0; */
   }
   #container div{
     width:100%;
@@ -74,16 +78,16 @@
   .main-content {
     z-index: 2;
     position: fixed;
-    width: 70%;
+    width: 55%;
+    /* height: 500px; */
     margin-top: 20%;
     margin-left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #00060c
   }
   .camera-frame{
     width: 100%;
-    height: 100%;
-    background-color: rgb(65, 39, 6)
+    height: 80%;
+    background-color: rgb(190, 144, 83)
   }
 </style>
   
